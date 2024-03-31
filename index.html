@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unstop - Training Placement Officer</title>
+    <style>
+        /* Basic styling, you can expand upon this */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #09008B;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+        .sidebar-left, .sidebar-right {
+            width: 20%;
+            background-color: #2c3e50; /* Unstop's primary color */
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+        }
+        .sidebar-right {
+            float: right;
+        }
+        nav {
+            float: left;
+            width: 20%;
+            background-color: #34495e; /* Unstop's secondary color */
+            color: #fff;
+            padding: 20px;
+            height: 100vh;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-bottom: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul .dropdown-content {
+            display: none;
+        }
+        nav ul .dropdown-content ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        .content {
+            float: left;
+            width: 60%;
+            padding: 20px;
+            min-height: 100vh;
+            text-align: center; /* Center-align content */
+        }
+        .tiles {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px; /* Add margin to the bottom */
+        }
+        .tile {
+            background-color: #ecf0f1; /* Light background */
+            color: #333;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 45%;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .tile:hover {
+            background-color: #d5dbdb; /* Lighter background on hover */
+        }
+        .column {
+            margin-bottom: 20px;
+        }
+        .column h2 {
+            color: white; /* Unstop's primary color */
+            margin-bottom: 10px;
+        }
+        .column ul {
+            padding-left: 20px;
+        }
+        img {
+            margin-top: -250px; /* Adjust the margin to move the image up */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome, Training Placement Officer!</h1>
+    </header>
+    <div class="container">
+        <div class="sidebar-left">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#"><h2>My Students</h2></a>
+                        <ul class="dropdown-content">
+                            <li><a href="c.html">Batch24</a></li>
+                            <li><a href="d.html">Batch25</a></li>
+                            <li><a href="e.html">Batch26</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="rank.html"><h2>Ranking and Points</h2></a>
+                    </li>
+                    <li>
+                        <a href="feedback.html"><h2>Feedback</h2></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="tiles">
+                <div class="tile">Webinars</div>
+                <div class="tile">Guest Lectures</div>
+                <div class="tile">Mentorship</div>
+                <div class="tile">Courses</div>
+                <br></br>
+                <img src="k.jpeg">
+            </div>
+        </div>
+        <div class="sidebar-right">
+            <div class="column">
+                <h2><u>Placement</u></h2>
+                <ul>
+                    <li><a href ="company.html">Company A </a><a href="", style="color:lightgreen;">(20 students eligible)</a></li>
+                    <li>Company B <a href="", style="color:lightgreen;">(10 students eligible)</a></li>
+                    <li>Company C <a href="", style="color:lightgreen;">(3 students eligible)</a></li><br>
+                    <br>
+                </ul>
+            </div>
+            <div class="column">
+                <h2><u>Internships</u></h2>
+                <ul>
+                    <li><a href="company.html">Company A </a><a href="", style="color:lightgreen;">(30 students eligible)</a></li>
+                    <li>Company B <a href="", style="color:lightgreen;">(17 students eligible)</a></li>
+                    <li>Company C <a href="", style="color:lightgreen;">(12 students eligible)</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle dropdown menu
+        document.addEventListener("DOMContentLoaded", function() {
+            var dropdowns = document.querySelectorAll("nav ul li");
+
+            dropdowns.forEach(function(dropdown) {
+                dropdown.addEventListener("click", function() {
+                    var dropdownContent = this.querySelector(".dropdown-content");
+                    dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+                });
+            });
+        });
+    </script>
+</body>
+</html>

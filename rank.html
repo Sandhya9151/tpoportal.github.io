@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Rank Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .left-column {
+            width: 66.66%;
+            background-color: #555;
+            color: #fff;
+            padding: 20px;
+        }
+        .right-column {
+            width: 33.33%;
+            padding: 20px;
+        }
+        .rank-image {
+            width: 100%;
+            max-height: 300px; /* Adjust the maximum height as needed */
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: lightblue; /* Set table background color */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        .filter-buttons {
+            margin-bottom: 10px;
+        }
+        .filter-button {
+            margin-right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+        }
+        .filter-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>College Rank Dashboard</h1>
+    </header>
+    <div class="container">
+        <div class="left-column">
+            <h2>Current Rank: 59</h2>
+            <!-- Insert image showcasing rank over time -->
+            <img src="graph.png" alt="Rank over Time" class="rank-image">
+            <!-- New table for college details -->
+            <div class="college-details">
+                <h2>College Details</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>College Name</th>
+                            <th>Rank</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Randomly insert college names -->
+                        <tr>
+                            <td>College A</td>
+                            <td>59</td>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <td>College B</td>
+                            <td>72</td>
+                            <td>480</td>
+                        </tr>
+                        <tr>
+                            <td>College C</td>
+                            <td>84</td>
+                            <td>450</td>
+                        </tr>
+                        <tr>
+                            <td>College D</td>
+                            <td>96</td>
+                            <td>430</td>
+                        </tr>
+                        <tr>
+                            <td>College E</td>
+                            <td>110</td>
+                            <td>400</td>
+                        </tr>
+                        <tr>
+                            <td>College F</td>
+                            <td>122</td>
+                            <td>380</td>
+                        </tr>
+                        <tr>
+                            <td>College G</td>
+                            <td>134</td>
+                            <td>360</td>
+                        </tr>
+                        <tr>
+                            <td>College H</td>
+                            <td>146</td>
+                            <td>340</td>
+                        </tr>
+                        <tr>
+                            <td>College I</td>
+                            <td>158</td>
+                            <td>320</td>
+                        </tr>
+                        <tr>
+                            <td>College J</td>
+                            <td>170</td>
+                            <td>300</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="right-column">
+            <h2>Students</h2>
+            <div class="filter-buttons">
+                <button class="filter-button" onclick="filterStudents('all')">All</button>
+                <button class="filter-button" onclick="filterStudents('4th')">4th Year</button>
+                <button class="filter-button" onclick="filterStudents('3rd')">3rd Year</button>
+                <button class="filter-button" onclick="filterStudents('2nd')">2nd Year</button>
+            </div>
+            <table id="students-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Year</th>
+                        <th>Rank</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>4th</td>
+                        <td>1</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>3rd</td>
+                        <td>2</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>Bob Johnson</td>
+                        <td>2nd</td>
+                        <td>3</td>
+                        <td>85</td>
+                    </tr>
+                    <!-- Add more students -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        function filterStudents(year) {
+            var tableRows = document.querySelectorAll('#students-table tbody tr');
+            tableRows.forEach(function(row) {
+                var studentYear = row.children[1].textContent.toLowerCase();
+                if (year === 'all' || studentYear === year) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
